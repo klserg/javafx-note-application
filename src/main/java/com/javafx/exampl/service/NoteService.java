@@ -14,12 +14,24 @@ public class NoteService {
         try {
             return noteDao.create(note);
         } catch (DaoException e) {
-            throw new ServiceException("failed to save");
+            throw new ServiceException("Failed to save");
         }
     }
 
-    public List<Note> findAll() {
-        return null;
+    public List<Note> findAll() throws ServiceException {
+        try {
+            return noteDao.findAll();
+        } catch (DaoException e) {
+            throw new ServiceException("Failed to show");
+        }
+    }
+
+    public void delete(int id) throws ServiceException {
+        try {
+            noteDao.delete(id);
+        } catch (DaoException e) {
+            throw new ServiceException("Failed to delete");
+        }
     }
 
 }

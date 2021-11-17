@@ -9,6 +9,14 @@ public class Note {
 
     private LocalDateTime createdTime;
 
+    public Note() {}
+
+    public Note(Integer id, String description, LocalDateTime createdTime) {
+        this.id = id;
+        this.description = description;
+        this.createdTime = createdTime;
+    }
+
     public Integer getId() {
         return id;
     }
